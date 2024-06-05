@@ -133,7 +133,7 @@ class Redis
   end
 
   def json_merge(key, data, path = Rejson::Path.root_path)
-    pieces = [key, str_path(path), json_encode(data)]
+    pieces = [key, str_path(path), data]
     call_client(:merge, pieces)
   end
 
